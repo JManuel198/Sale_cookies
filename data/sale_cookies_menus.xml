@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <menuitem id="sale_cookies_menu_root" name="Cookies Sales"/>
+        <menuitem id="sale_cookies_first_level_menu" name="Cookies Sales"/>
+            <menuitem id="sale_cookies_menu_action" action="sale_cookies_action"/>
+        </menuitem>
+
+        <menuitem id="sale_cookies_summary_menu" name="Sales Analysis"/>
+            <menuitem id="sale_cookies_summary_action" action="sale_cookies_summary_action"/>
+        </menuitem>
+    </menuitem>
+</odoo>
