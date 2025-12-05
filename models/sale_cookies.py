@@ -3,10 +3,10 @@ from odoo import models, fields, api
 class SaleCookies(models.Model):
     _name = 'sale.cookies'
     _description = 'Sales cookies'
-    _inherit = 'sale.cookies'
 
     name = fields.Char()
     description = fields.Text()
+    active = fields.Boolean(default=True)
 
     client_id = fields.Many2one(comodel_name="res.partner", ondelete="restrict")
 
@@ -19,7 +19,7 @@ class SaleCookies(models.Model):
         ('galletas_rellenas', 'Galletas Rellenas'),
     ], required=True)
 
-    date_sale = fields.Datetime(string="Sale Date", required=True, default=fields.Datetime.now)
+    date_sale = fields.Date(string="Sale Date", required=True, default=fields.Date.context_today)
     status = fields.Selection(string="Status sale", selection=[
         ('pagado', 'Pagado'),
         ('pendiente', 'Pendiente')

@@ -1,7 +1,7 @@
 {
     'name': 'Sale for Cookies in Odoo',
     'depends': [
-        'base', 'sale',
+        'base', 'sale'
     ],
     'data': [
         "security/ir.model.access.csv",

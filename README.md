@@ -1,4 +1,6 @@
 Por crear:
+Crear un apartado que calcule el total del dinero de la suma de todos los registros.
+
 Cada que cambie el status a "pagado" se agrega el total_price al total_summary que sería el total de dinero de todos los registros sumados, solo que aquellos que estén en "pendiente" no se cuentan. Sirve para ver cuanta cantidad de dinero está verdaderamente en posesión, y cuales registros se deben cobrar.
 
 Crear una vista search para filtrar registros pagados y pendientes.

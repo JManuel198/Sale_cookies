@@ -21,7 +21,7 @@
         <field name="model">sale.cookies</field>
         <field name="arch" type="xml">
             <list string="Cookies Sales">
-                <field name="name" string="Title"/>
+                <field name="name" string="Day"/>
                 <field name="client_id" string="Client"/>
                 <field name="product" string="Product"/>
                 <field name="quantity" string="Quantity"/>
@@ -50,11 +50,11 @@
                     <group>
                         <group>
                             <field name="client_id"/>
-                            <field name="date"/>
+                            <field name="date_sale"/>
                         </group>
                     </group>
                     <notebook>
-                        <page string="Description" name="description">
+                        <page string="Description Sale" name="description">
                         <group>
                             <group>
                             <field name="description"/>
@@ -65,7 +65,7 @@
                             </group>
                         </group>
                         </page>
-                        <page string="Other Info">
+                        <page string="Payment Info">
                             <group>
                                 <field name="total_price"/>
                                 <field name="status"/>
@@ -76,3 +76,4 @@
             </form>
         </field>
     </record>
+</odoo>

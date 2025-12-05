@@ -1,0 +1,33 @@
+# Archivos Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Archivos de Odoo auto-generados
+*.log
+*.swp
+*.swo
+
+# Carpeta de datos temporales
+/tmp/
+*.tmp
+
+# Archivos de tests opcionales
+.coverage
+.cache/
+pytest_cache/
+
+# Archivos de entorno
+.env
+venv/
+ENV/
+env/
+
+# Configuración de IDEs
+.vscode/
+.idea/
+
+# Archivos de sistema
+.DS_Store
+Thumbs.db

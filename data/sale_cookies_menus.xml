@@ -1,12 +1,9 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0"?>
 <odoo>
-    <menuitem id="sale_cookies_menu_root" name="Cookies Sales"/>
-        <menuitem id="sale_cookies_first_level_menu" name="Cookies Sales"/>
-            <menuitem id="sale_cookies_menu_action" action="sale_cookies_action"/>
-        </menuitem>
 
-        <menuitem id="sale_cookies_summary_menu" name="Sales Analysis"/>
-            <menuitem id="sale_cookies_summary_action" action="sale_cookies_summary_action"/>
-        </menuitem>
-    </menuitem>
+    <!-- Raíz -->
+    <menuitem id="sale_cookies_menu_root" name="Cookies Sales Module"/>
+    <!-- Primer menú -->
+    <menuitem id="sale_cookies_first_level_menu" name="Cookies Sales" parent="sale_cookies_menu_root"/>
+        <menuitem id="sale_cookies_menu_action" parent="sale_cookies_first_level_menu" action="sale_cookies_action"/>
 </odoo>
