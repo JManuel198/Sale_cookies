@@ -1,9 +1,6 @@
 <?xml version="1.0"?>
 <odoo>
-
-    <!-- Raíz -->
-    <menuitem id="sale_cookies_menu_root" name="Cookies Sales Module"/>
-    <!-- Primer menú -->
-    <menuitem id="sale_cookies_first_level_menu" name="Cookies Sales" parent="sale_cookies_menu_root"/>
-        <menuitem id="sale_cookies_menu_action" parent="sale_cookies_first_level_menu" action="sale_cookies_action"/>
+    <menuitem id="sale_cookies_menu_root" name="Sales Cookies"/>
+        <menuitem id="sale_cookies_first_level_menu" name="Sales Cookies Management" parent="sale_cookies_menu_root"/>
+            <menuitem id="sale_cookies_menu_action" action="sale_cookies_action"/>
 </odoo>
