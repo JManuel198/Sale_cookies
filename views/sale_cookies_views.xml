@@ -21,7 +21,7 @@
         <field name="model">sale.cookies</field>
         <field name="arch" type="xml">
             <list string="Cookies Sales">
-                <field name="name" string="Day"/>
+                <field name="name" string="Sale ID"/>
                 <field name="client_id" string="Client"/>
                 <field name="product" string="Product"/>
                 <field name="quantity" string="Quantity"/>
@@ -44,7 +44,7 @@
                     <widget name="web_ribbon" title="Archived" bg_color="text-bg-danger" invisible="active"/>
                     <div class="oe_title">
                         <h1 class="mb32">
-                            <field name="name" placeholder="New Sale cookie" class="mb16"/>
+                            <field name="name" placeholder="Sale ID" class="mb16"/>
                         </h1>
                     </div>
                     <group>
