@@ -24,8 +24,8 @@
                 <field name="name" string="Sale ID"/>
                 <field name="client_id" string="Client"/>
                 <field name="product" string="Product"/>
-                <field name="quantity" string="Quantity"/>
                 <field name="date_sale" string="Sale Date"/>
+                <field name="quantity" string="Quantity"/>
                 <field name="unit_price" string="Unit Price"/>
                 <field name="total_price" string="Total Price"/>
                 <field name="status" string="Status Sale"/>
