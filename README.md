@@ -1,24 +1,44 @@
-Por crear:
-Crear un apartado que calcule el total del dinero de la suma de todos los registros.
+sale_cookies
 
-Cada que cambie el status a "pagado" se agrega el total_price al total_summary que sería el total de dinero de todos los registros sumados, solo que aquellos que estén en "pendiente" no se cuentan. Sirve para ver cuanta cantidad de dinero está verdaderamente en posesión, y cuales registros se deben cobrar.
+Módulo personalizado para gestionar ventas de emprendimientos pequeños de galletas.
+Actualmente permite registrar ventas con todos los datos necesarios y una buena base para crecer con nuevas funcionalidades.
 
-Crear una vista search para filtrar registros pagados y pendientes.
+Este módulo es creado principalmente para llevar un control de las ventas en un emprendimiento pequeño de galletas. No se utiliza el módulo sale que viene estandar de odoo ya que se busca una personalización versátil ajustada a cada emprendimiento, en este caso aplicado a el mío propio, manteniendo registros simples y puntuales.
 
-Crear un modelo de inventario de materiales que calcule los presupuestos, ganancias y margen de los productos según la variación del precio de los materiales cada que se reponen, por lo que debe existir la posibilidad de ver qué hay disponible y qué está apunto de agotarse. Sería mejor fuera de odoo-
+Características Actuales:
 
-Crear un inventario que almacene específicamente las tandas de galletas que se realizan, aunque esto para cuando ya se escale el emprendimiento a un nivel más grande donde se trabajen con cantidades más elevadas.
+Registro de ventas con campos esenciales (cliente, producto, cantidad, gramaje, precio unitario, fecha, total).
 
-Crear modelo de lineas de compra, donde se especifíque con detalle cada producto comprado en una venta.
+Campo computado que calcula el total de la venta multiplicando la cantidad por el precio unitario, el cual varía según el gramaje. Ej: 100g = 2$, 50g = 1$.
 
-Crear modelo de pedidos que almacene ordenes de compra que serán entregada en el futuro no muy lejano, este modelo debe incluir obligatoriamente la fecha que se debe entregar y si el pedido tiene precio extra por delivery.
+Interfaz simple con vista tipo list y form.
 
-Crear un filtro que muestre última compra de cada cliente y calcule cuantos días tiene desde la última compra, debe tener la información de contacto para realizar promociones estratégicas.
+Control básico de estado: pendiente o pagado.
 
-Crear modelos y vistas de analíticas, cúanto se gana, cuánto se gasta tanto en reinversión como en otras inversiones y la rentabilidad.
+Estructura Técnica 
 
-Crear un flitro que muestre qué producto comprá más cada cliente y hacer promociones estratégicas.
+Modelos:
+`models/sale_cookies.py`: Modelo principal para órdenes de venta.
 
-Crear un flitro que muestre cuál es el producto más popular actualmente.
+Vistas:
+`views/sale_cookies_view.xml`: Vistas list y form.
 
-Crear un bot que conecte con whatsapp o telegram y se puedan añadir registros desde chat de forma secuencial, el bot debe incluir confirmación o editación de cada dato que se va dando y dichos datos deben tener coherencia con los modelos.
+Datos:
+`data/sale_cookies_menus.xml`:
+Menu.
+
+Seguridad:
+`security/ir.model.access.csv`: Permisos.
+
+Manifest:
+`__manifest__.py`: Dependencias, metadata y carga del módulo.
+
+Instalación:
+
+1. Clonar o copiar el módulo en la carpeta `addons`.
+2. Actualizar lista de módulos en Odoo.
+3. Buscar “Sale Cookies” y activar.
+4. Verificar permisos y acceso.
+
+Autor:
+Manuel Jauregui
