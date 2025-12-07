@@ -5,7 +5,7 @@
     ],
     'data': [
         "security/ir.model.access.csv",
-        "data/sequence.xml",
+        "data/ir.sequence.xml",
         "views/sale_cookies_views.xml",
         "data/sale_cookies_menus.xml"
     ],

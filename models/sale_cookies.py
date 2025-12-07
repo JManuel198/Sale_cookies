@@ -5,7 +5,7 @@ class SaleCookies(models.Model):
     _description = 'Sales cookies'
 
     name = fields.Char()
-    reference = fields.Char(string='Ticket', readonly=True, default=lambda self: _('New'))
+    reference = fields.Char(readonly=True, default=lambda self: _('New'))
     description = fields.Text()
     active = fields.Boolean(default=True)
 
@@ -42,8 +42,10 @@ class SaleCookies(models.Model):
             record.total_price = record.quantity * record.unit_price
             
     # Campo para secuenciar el campo reference.
-    @api.model
-    def create(self, valslist):
-        if valslist.get('reference', _('New')) == _('New'):
-            valslist['reference'] = self.env['ir.sequence'].next_by_code('sale.cookies') or _('New')
-        return super(SaleCookies, self).create(valslist)
+    @api.model_create_multi
+    def create(self, vals_list):
+        for vals in vals_list:
+            # Si viene como New (tu default), asigna secuencia
+            if vals.get('reference', 'New') == 'New':
+                vals['reference'] = self.env['ir.sequence'].next_by_code('sale.cookies') or _('New')
+        return super().create(vals_list)
