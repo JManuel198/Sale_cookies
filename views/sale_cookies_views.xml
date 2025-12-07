@@ -21,7 +21,8 @@
         <field name="model">sale.cookies</field>
         <field name="arch" type="xml">
             <list string="Cookies Sales">
-                <field name="name" string="Sale ID"/>
+                <field name="reference" string="Sale ID"/>
+                <field name="name" string="Name"/>
                 <field name="client_id" string="Client"/>
                 <field name="product" string="Product"/>
                 <field name="date_sale" string="Sale Date"/>

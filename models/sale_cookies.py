@@ -1,10 +1,11 @@
-from odoo import models, fields, api
+from odoo import models, fields, api, _
 
 class SaleCookies(models.Model):
     _name = 'sale.cookies'
     _description = 'Sales cookies'
 
     name = fields.Char()
+    reference = fields.Char(string='Ticket', readonly=True, default=lambda self: _('New'))
     description = fields.Text()
     active = fields.Boolean(default=True)
 
@@ -39,3 +40,10 @@ class SaleCookies(models.Model):
     def _compute_total_price(self):
         for record in self:
             record.total_price = record.quantity * record.unit_price
+            
+    # Campo para secuenciar el campo reference.
+    @api.model
+    def create(self, valslist):
+        if valslist.get('reference', _('New')) == _('New'):
+            valslist['reference'] = self.env['ir.sequence'].next_by_code('sale.cookies') or _('New')
+        return super(SaleCookies, self).create(valslist)
