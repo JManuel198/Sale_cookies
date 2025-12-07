@@ -22,7 +22,7 @@
         <field name="arch" type="xml">
             <list string="Cookies Sales">
                 <field name="reference" string="Sale ID"/>
-                <field name="name" string="Name"/>
+                <field name="name" string="Day"/>
                 <field name="client_id" string="Client"/>
                 <field name="product" string="Product"/>
                 <field name="date_sale" string="Sale Date"/>
@@ -45,7 +45,7 @@
                     <widget name="web_ribbon" title="Archived" bg_color="text-bg-danger" invisible="active"/>
                     <div class="oe_title">
                         <h1 class="mb32">
-                            <field name="name" placeholder="Sale ID" class="mb16"/>
+                            <field name="name" placeholder="Sale day" class="mb16"/>
                         </h1>
                     </div>
                     <group>
